@@ -4,7 +4,7 @@
 <html>
 <body>
 <h1>Registration form </h1>
-<form action="" method="post">
+<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
 Full Name: <input type="text" name="fname"> <?php echo $validatename; ?>
 <br><br>
 E-mail: <input type="text" name="email"> <?php echo $validateemail; ?>
@@ -40,7 +40,7 @@ My hobby is dancing<br>
 <br><br>
 
 Please Choose a file:
-<input type="submit" value="choose file">No file chosen
+<input type="file" name="filetoupload">
 <br>
 <input type="submit" value="Submit">
 <input type="submit" value="Reset">

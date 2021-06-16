@@ -65,6 +65,18 @@ else{
    {
     $h3= $_REQUEST["hobby3"];
    }
+
+ }
+ $target_dir = "files/";
+$target_file = "files/". $_FILES["filetoupload"]["name"];
+
+ if (move_uploaded_file($_FILES["filetoupload"]["tmp_name"], $target_file)){
+     echo "you have uploaded".$_FILES["filetoupload"]["name"];
+     echo "<br>".$_FILES["filetoupload"]["type"];
+ }
+ else {
+     echo "Sorry,there was an error uploading your file";
+ }
 }
-}
+
 ?>
