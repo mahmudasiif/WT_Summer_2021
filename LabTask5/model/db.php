@@ -17,6 +17,23 @@ $result = $conn->query("SELECT * FROM ". $table." WHERE username='". $username."
  return $result;
  }
 
+ function AddProduct($conn,$table,$pname,$pdesc,$pcategory,$pprice,$pimage)
+ {
+$result = $conn->query("INSERT INTO $table VALUES('','$pname','$pdesc','$pcategory',$pprice,'$pimage')");
+ return $result;
+ }
+function searchProduct($conn,$table,$pname)
+ {
+$result = $conn->query("SELECT * FROM  $table where P_Name='$pname'");
+ return $result;
+}
+function allProduct($conn,$table)
+ {
+$result = $conn->query("SELECT * FROM  $table");
+ return $result;
+}
+
+
  function ShowAll($conn,$table)
  {
 $result = $conn->query("SELECT * FROM  $table");
